@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>J White P&H</title>
+  <link rel="stylesheet" href="styles.css">
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <header id="header">
+    <div class="header-content">
+      <h1>J White Plumbing & Heating</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#mywork">My Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <img src="jwhite logo.png">
+    </div>
+  </header>
+  
+
+  <main>
+    <section id="home"> 
+      <div class="toppage">
+        <div class="banner">
+        </div>
+        <h1 id="bannertext">JWhite Plumbing<br> and Heating</h1>
+        <div class="contact-info">
+          <div class="facebook">
+            <h2>Facebook:</h2>
+            <a href="https://www.facebook.com/jwhiteplumbingheating">
+              <img src="facebook.png">
+            </a>
+          </div>
+          <h2 id="phonenum">Phone Number: 07834 268059</h2>
+        </div>
+      </div>
+    </section>
+    
+    <section id="services">
+        <h2 id="servicestitle">Below are the plumbing services I provide:</h2>
+      <div id="toprow">
+        <div class="rowitem" id="boilerFittingsItem">
+          <img src="boiler fitting.png">
+          <h3>Boiler Fittings + Replacement</h3>
+        </div>
+        <div class="rowitem" id="centralHeatingItem">
+          <img src="centralheating.jpg">
+          <h3>Central Heating Installation</h3>
+        </div>
+        <div class="rowitem" id="servicingItem">
+          <img src="wrench.png">
+          <h3>Boiler Servicing</h3>
+        </div>
+        <div class="rowitem" id="powerFlushingItem">
+          <img src="powerflush.jpg">
+          <h3>Power Flushing</h3>
+        </div>
+      </div>
+      <p id="boilerFittingsText" class="hidden">Additional text for Boiler Fittings + Replacement</p>
+      <p id="centralHeatingText" class="hidden">Additional text for Central Heating Installation</p>
+      <p id="servicingText" class="hidden">Additional text for Boiler Servicing</p>
+      <p id="powerFlushingText" class="hidden">Additional text for Power Flushing</p>
+      <div id="toprow">
+        <div class="rowitem" id="landlordCertificatesItem">
+          <img src="landcert.png">
+          <h3>Landlord Certificates</h3>
+        </div>
+        <div class="rowitem" id="bathroomsItem">
+          <img src="bathroom.jpg">
+          <h3>Bathroom Installations</h3>
+        </div>
+        <div class="rowitem" id="generalItem">
+          <img src="genplumb.jpg">
+          <h3>General Plumbing</h3>
+        </div>
+        <div class="rowitem" id="underfloorItem">
+          <img src="underhe.jpg">
+          <h3>Underfloor Heating</h3>
+        </div>
+      </div>
+      <p id="landlordCertificatesText" class="hidden">Additional text for Landlord Certificates</p>
+      <p id="bathroomsText" class="hidden">Additional text for Bathroom Installations</p>
+      <p id="generalText" class="hidden">Additional text for General Plumbing</p>
+      <p id="underfloorText" class="hidden">Additional text for Underfloor Heating</p>
+      <h2 id="suppliers">My Suppliers</h2>
+      <div class="supply">
+        <img src="glowworm.png">
+        <img src="vailant.png">
+        <img src="joule.png">
+        <img src="megaflo.jpg">
+        <img src="gledhill.png">
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="maptitle">Josh White, a gas safe registered plumber operating in the ipswich area</h2>
+      <div id="map">
+      </div>
+      <h2 id="locations">I mainly cover the above areas: Ipswich, Kesgrave, Woodbridge, Hintlesham, Hadleigh and Sudbury</h2>
+    </section>
+
+    <section id="mywork">
+
+    </section>
+
+    <section id="contact">
+      <h2 id="conttext">Enquire about plumbing services below</h2>
+      <form action="send-email.php" method="POST" id="contform">
+        <div class="inputgroup">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required><br><br>
+      
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required><br><br>
+        </div>
+      
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+      
+        <input type="submit" value="Submit">
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 J White Plumbing & Heating</p>
+    <div class="footy">
+      <img src="gassafe.jpg" style="margin-top: 10px;">
+      <img src="cityguilds.png" style="margin-top: 10px;">
+    </div>
+  </footer>
+
+  <script
+    src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  ></script>
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <php src="backend.php"></php>
+
+</body>
+</html>

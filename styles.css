@@ -1,0 +1,334 @@
+/* Basic styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #004080;
+  color: #fff;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  color: #F0F0F0; /* Remove default margin to move the title more to the left */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #F0F0F0;
+  padding: 10px 30px;
+  transition: background-color 0.3s; /* Adding transition for smooth color change */
+}
+
+nav ul li a:hover {
+  background-color: #0055FF; /* Change the background color on hover */
+  color: #FFF; /* Change the text color on hover for better visibility */
+  text-decoration: none;
+}
+
+img {
+  max-width: 100px; /* Adjust the width of the image */
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer img {
+  margin-left: 10px; /* Add space between text and image */
+  vertical-align: middle; /* Align the image vertically */
+  max-width: 100px; /* Adjust the width of the image */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.reviews {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.review {
+  width: 30%; /* Set width for equal spacing */
+  background-color: #64addd; /* Blue background color */
+  padding: 20px;
+  margin: 5px; /* Spacing */
+  color: #fff;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Shading effect */
+}
+
+
+.maptitle {
+  text-align: center;
+}
+
+#map {
+  width: 90%;
+  margin: 0 auto; /* Center the map */
+  height: 400px;
+  margin-bottom: 10px;
+}
+
+#reviewtitle {
+  margin-left: 20px;
+  text-decoration: underline;
+}
+
+#toprow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rowitem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center items vertically within .rowitem */
+  align-items: center; /* Center items horizontally within .rowitem */
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 200px; /* Set your desired width */
+  height: 200px;
+  border: 5px solid #fff;
+  text-align: center;
+}
+
+.rowitem:hover {
+  background-color: lightblue;
+}
+
+.rowitem img {
+  margin-bottom: 5px;
+  align-self: center;
+}
+
+.hidden {
+  display: none;
+  margin-left: 20px;
+}
+
+.rowitem.clicked {
+  border: 5px solid #000;
+}
+
+#suppliers {
+  text-align: center;
+}
+
+.supply {
+  display: flex;
+  justify-content: center; /* Center items vertically within .rowitem */
+  align-items: center; /* Center items horizontally within .rowitem */
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.supply img {
+  margin: 100px;
+  width: 600px;
+  height: auto;
+}
+
+.toppage {
+  position: relative;
+  width: 100%;
+  height: 700px; /* Adjust height as needed */
+  overflow: hidden;
+  background-color: #FFF;
+}
+
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75%; /* Cover 75% of the width */
+  height: 100%;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end; /* Adjusted to align content to the right */
+  padding-left: 20px;
+  overflow: hidden; /* Hide overflow from skewed element */
+  z-index: 1;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Cover the entire width of the pseudo-element */
+  height: 100%;
+  background-image: url('dontcutcorners.jpg');
+  background-size: cover;
+  background-position: center;
+  transform-origin: top left;
+  transform: skewX(-15deg); /* Adjust the angle of the slant */
+  z-index: -1; /* Place the pseudo-element behind the content */
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%; /* Adjust width for the straight portion */
+  height: 100%;
+  background: inherit; /* Inherit the background from the main element */
+  z-index: -2; /* Place the pseudo-element behind the slanted pseudo-element */
+}
+
+#bannertext {
+  position: absolute;
+  top: 30%;
+  left: 86%; /* Adjust distance from the left */
+  font-size: 3em;
+  margin: 0;
+  padding: 20px;
+  text-align: right;
+  transform: translate(-50%, -50%) skewX(0deg); /* Adjust skew and center */
+  z-index: 2; /* Ensure text is above the banner */
+  white-space: nowrap; /* Prevent line break */
+  color: #000;
+}
+
+.contact-info {
+  margin-top: 20px;
+  position: absolute;
+  top: 60%;
+  left: 86%; /* Adjust distance from the left */
+  font-size: 3em;
+  margin: 0;
+  padding: 20px;
+  text-align: right;
+  transform: translate(-50%, -50%) skewX(0deg); /* Adjust skew and center */
+  z-index: 2; /* Ensure text is above the banner */
+  white-space: nowrap; /* Prevent line break */
+  color: #000; /* Adjust spacing between h1 and contact info */
+}
+
+#services h2 {
+  margin-bottom: 50px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#locations {
+  text-align: center;
+}
+
+#contform{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust this value to suit your layout */
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+form {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#conttext {
+  text-align: center;
+  margin-top: 50px;
+  color: #2F3717;
+}
+
+main {
+  background-color: #FFF;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.facebook {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+
+.facebook img {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+#phonenum {
+  margin-right: 50px;
+}
