@@ -1,13 +1,21 @@
 // Smooth scrolling when clicking on navbar links
 document.querySelectorAll('nav a').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
-    e.preventDefault();
     const sectionId = this.getAttribute('href');
-    document.querySelector(sectionId).scrollIntoView({
-      behavior: 'smooth'
-    });
+
+    // Check if the href is #facebook
+    if (sectionId === '#facebook') {
+      // Redirect to Facebook
+      window.location.href = 'https://www.facebook.com/jwhiteplumbingheating';
+    } else {
+      e.preventDefault();
+      document.querySelector(sectionId).scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
   });
 });
+
 
 // Initialize the map
 var map = L.map("map", {
