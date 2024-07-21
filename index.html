@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>J White P&H</title>
+  <link rel="stylesheet" href="styles.css">
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <header id="header">
+    <div class="header-content">
+      <div class="mobile-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <img src="jwhite logo.png" alt="J White Plumbing & Heating" id="mainlogo">
+      <nav class="desktop-nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#mywork">My Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li id="facebook"><a href="https://www.facebook.com/jwhiteplumbingheating">
+            <img src="facebook.png" id="facebookpic">
+          </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+      <div class="mobile-menu">
+        <div class="close-menu">&times;</div>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#mywork">My Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li id="facebook"><a href="https://www.facebook.com/jwhiteplumbingheating">
+              <img src="facebook.png" id="facebookpic">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+
+  <main>
+    <section id="home"> 
+      <div class="toppage">
+        <div class="banner">
+        </div>
+      </div>
+      <div class="additional-section-1">
+        <div class="content">
+          <img src="work1.jpeg" alt="Image 1">
+          <div class="text">
+            <h2>Professional Plumber in Suffolk</h2>
+            <p>Hi there! I'm Josh White, your reliable professional plumber. With expertise in maintenance and installations, I deliver efficient, tailored solutions. Customer satisfaction is my priority—I strive to exceed expectations every time. Count on me for hassle-free plumbing services.</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="additional-section">
+        <div class="content">
+          <div class="text">
+            <h2>Why pay for a Quote?</h2>
+            <p>Discover Free, Tailored Plumbing Assessments
+              At JWhite Plumbing & Heating, Your Consultation Comes at No Cost
+              Benefit from Hassle-Free Plumbing Advice and Assessments
+              Provided by a Trusted Professional—No Fee Attached!</p>
+          </div>
+          <img src="work2.jpeg" alt="Image 2">
+        </div>
+      </div>
+      <div class="button-holder">
+        <a href="#contact" class="quote-button">Get a Free Quote Now!</a>
+      </div>
+    </section>
+    
+    <section id="services">
+      <h2 id="servicestitle">Below are the plumbing services I provide:</h2>
+      <div id="services-container">
+        <div class="service-item">
+            <img src="burstpipe.png">
+            <div class="service-text">
+                <h3>Burst Pipes</h3>
+                <p>Burst pipes are a common plumbing issue, especially during colder months. I offer prompt repair services to minimize damage to your property.</p>
+            </div>
+        </div>
+        <div class="service-item">
+            <div class="service-text">
+                <h3>Boiler Fittings + Replacement</h3>
+                <p>Boiler fittings and replacement encompass the installation, repair, or upgrade of components in a heating system. I offer fittings and replacements of new boilers.</p>
+            </div>
+            <img src="boiler fitting.png">
+        </div>
+        <div class="service-item">
+            <img src="centralheating.jpg">
+            <div class="service-text">
+                <h3>Central Heating Installation</h3>
+                <p>Central heating installation involves setting up or upgrading components in a central heating system such as radiators or thermostats.</p>
+            </div>
+        </div>
+        <div class="service-item">
+            <div class="service-text">
+                <h3>Power Flushing</h3>
+                <p>Power flushing is a cleaning process used to remove sludge, rust, debris, and other contaminants from the central heating system's pipes, radiators, and boiler. Over time, these substances can accumulate within the system, reducing its efficiency, impairing heat distribution, and potentially leading to premature failure of components. Power flushing helps restore the system's performance and efficiency by thoroughly cleaning the internal surfaces.</p>
+            </div>
+            <img src="powerflush.jpg">
+        </div>
+        <div class="service-item">
+          <img src="wrench.png">
+          <div class="service-text">
+              <h3>Boiler Servicing</h3>
+              <p>Boiler servicing is a preventative maintenance procedure performed by qualified technicians to ensure the safe, efficient, and reliable operation of a boiler. Regular servicing helps identify and address potential issues before they escalate into costly repairs or pose safety hazards.</p>
+          </div>
+        </div>
+        <div class="service-item">
+            <div class="service-text">
+                <h3>General Plumbing</h3>
+                <p>General plumbing services are essential for ensuring the proper functioning, safety, and efficiency of plumbing systems in residential, commercial, and industrial buildings. Plumbers play a vital role in maintaining the comfort, convenience, and health of occupants by providing reliable plumbing solutions and expertise.</p>
+            </div>
+            <img src="genplumb.jpg">
+        </div>
+        <div class="service-item">
+          <img src="landcert.png">
+          <div class="service-text">
+              <h3>Landlord Certificates</h3>
+              <p>Landlord certificates, also known as gas safety certificates, are legal requirements ensuring that gas appliances in rental properties are safe for tenants.</p>
+          </div>
+        </div>
+        <div class="service-item">
+            <div class="service-text">
+                <h3>Bathroom Installations</h3>
+                <p>Bathroom installation requires careful planning, skilled craftsmanship, and attention to detail to create a functional, stylish, and comfortable space that meets the needs and preferences of the homeowner.</p>
+            </div>
+            <img src="bathroom.jpg">
+        </div>
+        <div class="service-item">
+            <img src="underhe.jpg">
+            <div class="service-text">
+                <h3>Underfloor Heating</h3>
+                <p>Underfloor heating offers a comfortable, energy-efficient heating solution that can enhance the comfort and value of residential, commercial, and industrial buildings. With proper installation and maintenance, underfloor heating systems can provide reliable and efficient heating for many years.</p>
+            </div>
+        </div>
+    </div>
+    
+        <!-- Add more service items as needed, alternating text and images -->
+      </div>
+      <h2 id="suppliers">My Suppliers</h2>
+      <div class="supply">
+        <img src="glowworm.png">
+        <img src="vailant.png">
+        <img src="joule.png">
+        <img src="megaflo.jpg">
+        <img src="gledhill.png">
+        <img src="baxi.png">
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="maptitle">Josh White, a gas safe registered plumber operating in areas of Suffolk.</h2>
+      <div id="map">
+      </div>
+      <h2 id="locations">I cover the above areas: Ipswich, Kesgrave, Woodbridge, Hintlesham, Hadleigh, Needham Market, Stowmarket and Sudbury<br>Leave a review Below:</h2>
+    </section>
+
+    <section id="mywork">
+      <div id="reviewsContainer"></div>
+      <script>
+        // Function to fetch and display reviews
+        function showReviews() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var xmlDoc = xhr.responseXML;
+                    var reviews = xmlDoc.getElementsByTagName("review");
+    
+                    var reviewsContainer = document.getElementById("reviewsContainer");
+                    reviewsContainer.innerHTML = ""; // Clear previous content
+    
+                    for (var i = 0; i < reviews.length; i++) {
+                        var reviewerName = reviews[i].getElementsByTagName("reviewerName")[0].childNodes[0].nodeValue;
+                        var rating = parseInt(reviews[i].getElementsByTagName("rating")[0].childNodes[0].nodeValue);
+                        var description = reviews[i].getElementsByTagName("description")[0].childNodes[0].nodeValue;
+    
+                        var reviewElement = document.createElement("div");
+                        reviewElement.classList.add("review");
+                        reviewElement.innerHTML = "<h3>" + reviewerName + " - " + getStars(rating) + "</h3><p>" + description + "</p>";
+                        reviewsContainer.appendChild(reviewElement);
+                    }
+                }
+            };
+    
+            xhr.open("GET", "fetch-reviews.php", true);
+            xhr.send();
+        }
+    
+        // Function to get star icons based on rating
+        function getStars(rating) {
+            var stars = "";
+            for (var i = 0; i < rating; i++) {
+                stars += "★";
+            }
+            return stars;
+        }
+    
+        // Call the function to display reviews when the page loads
+        window.onload = function () {
+            showReviews();
+        };
+    </script>
+    <div class="inputgroup">
+      <form action="submit-review.php" method="POST" enctype="multipart/form-data" id="revform">
+          <label for="reviewerName">Your Name:</label>
+          <input type="text" id="reviewerName" name="reviewerName" required><br><br>
+    
+          <div class="rating">
+            <label for="rating">Rating:</label>
+          </div>
+            <div class="stars" id="stars">
+              <span class="star" data-value="1">&#9733;</span>
+              <span class="star" data-value="2">&#9733;</span>
+              <span class="star" data-value="3">&#9733;</span>
+              <span class="star" data-value="4">&#9733;</span>
+              <span class="star" data-value="5">&#9733;</span>
+            </div>
+            <input type="hidden" id="rating" name="rating">
+    
+          <label for="description">Description:</label><br>
+          <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+  
+          <input type="submit" value="Submit Review" id="submit-button">
+      </form>
+    </div>
+    </section>
+
+    <section id="contact">
+      <h2 id="conttext">Enquire about plumbing services below:</h2>
+      <form action="backend.php" method="POST" id="contform">
+        <div class="inputgroup">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required><br><br>
+      
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required><br><br>
+        </div>
+      
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+      
+        <input type="submit" value="Submit">
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 J White Plumbing & Heating</p>
+    <div class="footy">
+      <img src="gassafe.jpg" style="margin-top: 10px;">
+      <img src="cityguilds.png" style="margin-top: 10px;">
+    </div>
+  </footer>
+
+  <script
+    src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  ></script>
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
