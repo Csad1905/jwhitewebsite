@@ -9,12 +9,19 @@ document.querySelectorAll('nav a').forEach(anchor => {
       window.location.href = 'https://www.facebook.com/jwhiteplumbingheating';
     } else {
       e.preventDefault();
-      document.querySelector(sectionId).scrollIntoView({
+      const section = document.querySelector(sectionId);
+      const navbarHeight = document.querySelector('nav').offsetHeight;
+      const additionalOffset = 100; // Adjust this value as needed
+      const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - navbarHeight - additionalOffset;
+
+      window.scrollTo({
+        top: sectionTop,
         behavior: 'smooth'
       });
     }
   });
 });
+
 
 
 // Initialize the map
