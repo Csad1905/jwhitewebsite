@@ -5,7 +5,7 @@ body {
   padding: 0;
 }
 
-header {
+header{
   background-color: #004080;
   color: #fff;
   padding: 20px;
@@ -23,6 +23,94 @@ header {
 h1 {
   margin: 0;
   color: #F0F0F0; /* Remove default margin to move the title more to the left */
+}
+
+@media screen and (min-width: 768px) {
+  /* Mobile Menu CSS */
+  .mobile-nav {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: none;
+  }
+}
+
+/* Styling for the three lines icon */
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #FFF;
+  margin: 4px 0;
+}
+
+/* Styling for mobile menu */
+.mobile-menu {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  background-color: #004080;
+  padding-top: 80px;
+  transition: left 0.3s ease;
+}
+
+/* Change the display of the mobile menu links to display vertically */
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Change direction to column */
+}
+
+.mobile-menu ul li {
+  margin-bottom: 20px;
+}
+
+/* Styling for close button */
+.close-menu {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+
+/* Media query for mobile */
+@media screen and (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+  
+  .mobile-nav {
+    display: block;
+  }
+
+  /* Styling for mobile toggle button */
+  .mobile-toggle {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.navbar.active {
+  display: block;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin-bottom: 10px;
+}
+
+/* Adjust other styles for the navbar links */
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
 }
 
 nav ul {
@@ -72,23 +160,6 @@ footer img {
 html {
   scroll-behavior: smooth;
 }
-
-.reviews {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.review {
-  width: 30%; /* Set width for equal spacing */
-  background-color: #64addd; /* Blue background color */
-  padding: 20px;
-  margin: 5px; /* Spacing */
-  color: #fff;
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Shading effect */
-}
-
 
 .maptitle {
   text-align: center;
@@ -152,32 +223,38 @@ html {
 
 .supply {
   display: flex;
-  justify-content: center; /* Center items vertically within .rowitem */
-  align-items: center; /* Center items horizontally within .rowitem */
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 20px;
+    justify-content: center; 
+    align-items: center; 
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .supply img {
-  margin: 100px;
-  width: 600px;
+  margin: 50px;
+  width: 500px;
   height: auto;
 }
 
 .toppage {
   position: relative;
   width: 100%;
-  height: 700px; /* Adjust height as needed */
+  height: 1100px; /* Adjust height as needed */
   overflow: hidden;
   background-color: #FFF;
+  margin-bottom: 50px;
+  @media screen and (max-width: 768px){
+    height: 300px;
+  }
 }
 
 .banner {
   position: absolute;
   top: 0;
   left: 0;
-  width: 75%; /* Cover 75% of the width */
+  width: 100%; /* Cover 75% of the width */
   height: 100%;
   color: black;
   display: flex;
@@ -196,52 +273,14 @@ html {
   left: 0;
   width: 100%; /* Cover the entire width of the pseudo-element */
   height: 100%;
-  background-image: url('dontcutcorners.jpg');
-  background-size: cover;
+  background-image: url('bannerpc.jpeg');
+  background-size: 100%;
   background-position: center;
-  transform-origin: top left;
-  transform: skewX(-15deg); /* Adjust the angle of the slant */
   z-index: -1; /* Place the pseudo-element behind the content */
-}
-
-.banner::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20%; /* Adjust width for the straight portion */
-  height: 100%;
-  background: inherit; /* Inherit the background from the main element */
-  z-index: -2; /* Place the pseudo-element behind the slanted pseudo-element */
-}
-
-#bannertext {
-  position: absolute;
-  top: 30%;
-  left: 86%; /* Adjust distance from the left */
-  font-size: 3em;
-  margin: 0;
-  padding: 20px;
-  text-align: right;
-  transform: translate(-50%, -50%) skewX(0deg); /* Adjust skew and center */
-  z-index: 2; /* Ensure text is above the banner */
-  white-space: nowrap; /* Prevent line break */
-  color: #000;
-}
-
-.contact-info {
-  margin-top: 20px;
-  position: absolute;
-  top: 60%;
-  left: 86%; /* Adjust distance from the left */
-  font-size: 3em;
-  margin: 0;
-  padding: 20px;
-  text-align: right;
-  transform: translate(-50%, -50%) skewX(0deg); /* Adjust skew and center */
-  z-index: 2; /* Ensure text is above the banner */
-  white-space: nowrap; /* Prevent line break */
-  color: #000; /* Adjust spacing between h1 and contact info */
+  @media screen and (max-width: 768px){
+    background-image: url('bannerphones.jpeg');
+    
+  }
 }
 
 #services h2 {
@@ -250,15 +289,84 @@ html {
   margin-top: 50px;
 }
 
+.descriptions p {
+  text-align: center;
+  margin: 0;
+  width: 50%;
+  font-weight: bold;
+  color: #FFF;
+}
+
+.descriptions {
+  display: flex;
+  justify-content: center; /* centers along the main axis (horizontally) */
+  align-items: center; /* centers along the cross axis (vertically) */
+  background-color: #004080;
+  margin-bottom: 10px;
+}
+
 #locations {
   text-align: center;
+  margin-bottom: 100px;
+}
+
+#revform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  margin-bottom: 20px;
+}
+
+.inputgroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stars {
+  display: flex;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#reviewerName {
+  width: 200px; /* Adjust the width as desired */
+  margin-top: 10px; /* Add margin above the input */
+  margin-bottom: 10px; /* Add margin below the input */
+}
+
+.file-input-label {
+  margin-bottom: 20px; /* Add margin below the "Upload Image" button */
+}
+
+#submit-button {
+  margin-top: 20px; /* Add margin above the "Submit" button */
+  margin-bottom: 20px; /* Add margin below the "Submit" button */
+}
+
+#revtag {
+  margin-bottom: 5%;
 }
 
 #contform{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Adjust this value to suit your layout */
+  height: 75vh; /* Adjust this value to suit your layout */
+  margin-bottom: 50px;
 }
 
 .input-group {
@@ -266,12 +374,13 @@ html {
   justify-content: space-between;
   margin-bottom: 10px;
   align-items: center;
-
+  text-align: center;
 }
 
 input,
 textarea {
   width: 100%;
+  height: auto;
   padding: 8px;
   margin-bottom: 10px;
   align-items: center;
@@ -332,3 +441,218 @@ main {
 #phonenum {
   margin-right: 50px;
 }
+
+.stars {
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.star {
+  display: inline-block;
+}
+
+#mainlogo {
+  width: 200px;
+  height: auto;
+
+}
+
+.star.selected {
+  color: gold; /* Change color or add styling for selected stars */
+}
+
+/* Center the 'Reviews' and 'Leave a Review' headers */
+#mywork h2 {
+  text-align: center;
+  margin: 20px 0; /* Adjust margin as needed */
+}
+
+.quote-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green color, you can change this */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px; /* Adjust margin as needed */
+  transition: transform 0.2s, box-shadow 0.2s; /* Add smooth transitions */
+}
+
+.button-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hover effect for the button */
+.quote-button:hover {
+  transform: scale(1.05); /* Slightly increase size on hover */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+  text-decoration: none; /* Remove text underline on hover */
+  color: white;
+}
+
+.file-input-label {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 8px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.file-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-size: 0;
+  cursor: pointer;
+  opacity: 0;
+}
+
+/* Media query for mobile */
+@media screen and (max-width: 768px) {
+  form {
+    width: 90%; /* Adjusted width for mobile */
+    margin: 0 auto; /* Center the form */
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    height: auto;
+    padding: 10px; /* Adjusted padding */
+    margin-bottom: 15px; /* Increased margin for better spacing */
+  }
+
+  .file-input-label {
+    width: 100%; /* Make file input label full width */
+    padding: 8px 10px; /* Adjusted padding for mobile */
+  }
+
+  button {
+    width: 100%;
+    padding: 12px; /* Adjusted padding for better touch interaction */
+    margin-top: 20px; /* Increased margin for better spacing */
+  }
+}
+
+.additional-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  background-color: #FFF; /* Adjust background color as needed */
+  margin-bottom: 50px;
+}
+
+.content img {
+  border: 3px solid #000;
+}
+
+#facebook :hover {
+  background: none;
+}
+
+#facebookpic {
+  width: 5%;
+  height: auto;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.content img {
+  max-width: 40%; /* Adjust image size */
+  margin-right: 20px; /* Spacing between image and text */
+}
+
+.content .text {
+  max-width: 50%; /* Adjust text width */
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content img {
+    max-width: 80%;
+    margin: 0 auto 20px;
+  }
+
+  .content .text {
+    max-width: 100%;
+  }
+}
+
+/* Add styling for service items */
+.service-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2%;
+  margin-left: 10%; /* Add left margin */
+  margin-right: 10%; /* Add right margin */
+}
+
+
+.service-item .text {
+  width: 50%;
+  padding: 20px;
+}
+
+.service-item .image {
+  width: 50%;
+}
+
+.service-item .image img {
+  width: 100%;
+  height: auto;
+}
+
+
+.review {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.review h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.review p {
+  margin: 0;
+  color: #666;
+}
+
+/* Add margin between reviews */
+.review + .review {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  #reviewsContainer {
+    margin-bottom: 20px;
+  }
+}
+

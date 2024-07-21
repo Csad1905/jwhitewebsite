@@ -1,16 +1,19 @@
+<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
-
-    $to = "coreysadler811@gmail.com"; // Replace with the recipient's email address
+    
+    // Email details
+    $to = "Jwhiteplumbingandheating@hotmail.com"; // Your email address
     $subject = "New Contact Form Submission";
-    $messageBody = "Name: $name\nEmail: $email\nMessage: $message";
-    $headers = "From: $email";
-
-    if (mail($to, $subject, $messageBody, $headers)) {
-        echo "Email sent successfully";
+    $body = "Name: $name\nEmail: $email\nMessage: $message";
+    
+    // Send email
+    if (mail($to, $subject, $body)) {
+        echo "Message sent successfully!";
     } else {
-        echo "Failed to send email";
+        echo "Error sending message.";
     }
 }
+?>

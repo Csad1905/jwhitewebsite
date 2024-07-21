@@ -29,8 +29,11 @@ var locations = [
   { name: "Woodbridge", coords: [52.0907, 1.3169] },
   { name: "Hintlesham", coords: [52.0066, 0.9921] },
   { name: "Hadleigh", coords: [52.0451, 0.9567] },
-  { name: "Sudbury", coords: [52.0393, 0.7313] }
+  { name: "Sudbury", coords: [52.0393, 0.7313] },
+  { name: "Stowmarket", coords: [52.1885, 0.9977] }, // Adding Stowmarket
+  { name: "Needham Market", coords: [52.1521, 0.9916] } // Adding Needham Market
 ];
+
 
 var bounds = locations.map(location => L.latLng(location.coords));
 map.fitBounds(L.latLngBounds(bounds)); // Adjust map to show all markers
@@ -133,3 +136,87 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 });
+
+const stars = document.querySelectorAll('.star');
+
+// Function to handle star click
+function handleStarClick(event) {
+  const selectedValue = event.target.getAttribute('data-value');
+
+  // Set the rating input value
+  document.getElementById('rating').value = selectedValue;
+
+  // Update stars appearance based on click
+  stars.forEach(star => {
+    const value = star.getAttribute('data-value');
+    if (value <= selectedValue) {
+      star.classList.add('selected');
+    } else {
+      star.classList.remove('selected');
+    }
+  });
+}
+
+// Add click event listeners to each star
+stars.forEach(star => {
+  star.addEventListener('click', handleStarClick);
+});
+
+// Add this JavaScript to toggle the mobile menu
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.querySelector('.mobile-toggle');
+  const navbar = document.querySelector('.navbar');
+
+  toggle.addEventListener('click', function () {
+    navbar.classList.toggle('active');
+  });
+});
+
+// JavaScript to toggle the mobile menu
+document.querySelector('.mobile-toggle').addEventListener('click', function() {
+  document.querySelector('.mobile-menu').style.left = '0';
+});
+
+document.querySelector('.close-menu').addEventListener('click', function() {
+  document.querySelector('.mobile-menu').style.left = '-100%';
+});
+
+// JavaScript to toggle the mobile menu
+document.querySelector('.mobile-toggle').addEventListener('click', function () {
+  document.querySelector('.mobile-menu').style.left = '0';
+});
+
+document.querySelector('.close-menu').addEventListener('click', function () {
+  document.querySelector('.mobile-menu').style.left = '-100%';
+});
+
+// Close the mobile menu when a navigation link is clicked
+const mobileNavLinks = document.querySelectorAll('.mobile-menu ul li a');
+mobileNavLinks.forEach(function (link) {
+  link.addEventListener('click', function () {
+    document.querySelector('.mobile-menu').style.left = '-100%';
+  });
+});
+
+
+const axios = require('axios');
+const cheerio = require('cheerio');
+
+async function fetchReviews() {
+    try {
+        const response = await axios.get('https://www.checkatrade.com/jwhiteplumbingandheating');
+        const $ = cheerio.load(response.data);
+        console.log('Reviews:', $('.review').text());
+    } catch (error) {
+        console.error('Error fetching reviews:', error);
+    }
+}
+
+fetchReviews();
+
+
+
+
+
+
+
